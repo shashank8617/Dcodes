@@ -1,0 +1,19 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+   name: flipkart
+spec:
+   replicas: 2
+   selector:
+    matchLabels:
+     name: deployment
+   template:
+     metadata:
+       name: loginmodule
+       labels:
+         name: deployment
+     spec:
+      containers:
+        - name: login
+          image: centos
+          command: ["/bin/bash", "-c", "while true; do echo login v2; sleep 2; done"]

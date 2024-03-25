@@ -1,0 +1,20 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+   name: flipkart
+spec:
+   replicas: 1
+   selector:
+    matchLabels:
+     name: deployment
+   template:
+     metadata:
+       name: signupmodule
+       labels:
+         name: deployment
+     spec:
+      containers:
+        - name: signup
+          image: httpd
+          ports:
+          - containerPort: 80
