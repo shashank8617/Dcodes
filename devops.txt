@@ -2,12 +2,12 @@ TERAAFORM
 
 provider "aws" {
   region = "ap-south-1"  
-  access_key = "AKIA4T74ACGVL7RY4V56"
-  secret_key = "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"
+  access_key = "AKIA4T74ACGVL7RV56"
+  secret_key = "rJmMPEAVmDStJXtScDjGKrQFX/njCR1Z/e4zP"
 }
 
 resource "aws_instance" "example-1" {
-  ami           = "ami-0187337106779cdf8"
+  ami           = "ami-0187306779cdf8"
   instance_type = "t2.micro"
   key_name = "mumbailinux"
   aws_security
@@ -117,7 +117,7 @@ sudo systemctl daemon-reload
 
 
 
-  secret_key = "eGn4QluGGht6rcHglu58W870jO7YYuuODvgXoh8V"
+  secret_key = "eGn4QluGGht6Hglu58W870jO7YYuuODvgXoh8V"
 }
 
 resource "aws_vpc" "example" {
@@ -132,8 +132,8 @@ resource "aws_subnet" "example_public" {
 resource "aws_security_group" "example_sg" {
   vpc_id = aws_vpc.provider "aws" {
   region = "ap-south-1"
-  access_key = "AKIARPL2F63JH305JEL4"
-  secret_key = "eGn4QluGGht6rcHglu58W870jO7YYuuODvgXoh8V"
+  access_key = "AKIARP305JEL4"
+  secret_key = "eGn4QluGGht70jO7YYuuODvgXoh8V"
 }
 
 resource "aws_vpc" "example" {
@@ -159,8 +159,8 @@ resource "aws_security_group" "sg" {
 
 provider "aws" {
   region     = "ap-south-1"
-  access_key = "AKIARPL2F63JH305JEL4"
-  secret_key = "eGn4QluGGht6rcHglu58W870jO7YYuuODvgXoh8V"
+  access_key = "AKIARPH305JEL4"
+  secret_key = "eGn4QluGGh0jO7YYuuODvgXoh8V"
 }
 
 resource "aws_vpc" "example" {
@@ -184,11 +184,11 @@ resource "aws_security_group" "example_sg" {
 }
 
 resource "aws_instance" "example-1" {
-  ami             = "ami-0187337106779cdf8"
+  ami             = "ami-0187337109cdf8"
   instance_type   = "t2.micro"
   key_name        = "shashank"
   count           = 1
-  subnet_id       = "subnet-0ff77d87097016ced"
+  subnet_id       = "subnet-0ff77d7016ced"
   security_groups = ["aws_security_group"]
 
   provisioner "remote-exec" {
@@ -267,8 +267,8 @@ pipeline {
 
 provider "aws" {
   region     = "ap-south-1"
-  access_key = "AKIARPL2F63JCEKORSUG"
-  secret_key = "CQ3scx+c6YhW1ckx11FJU/rONAqP5pVTkB9Slgny"
+  access_key = "AKIARKORSUG"
+  secret_key = "CQ3scx+c6YrONAqP5pVTkB9Slgny"
 }
 
 resource "aws_vpc" "example" {
@@ -276,12 +276,12 @@ resource "aws_vpc" "example" {
 }
 
 resource "aws_subnet" "example_public" {
-  vpc_id     = "vpc-0c0df968e4dd60532"
+  vpc_id     = "vpc-0c0df968d60532"
   cidr_block = "10.0.0.0/16"
 }
 
 resource "aws_security_group" "example_sg" {
-  vpc_id = "vpc-0c0df968e4dd60532"
+  vpc_id = "vpc-0cd60532"
 
   ingress {
     from_port   = 80
@@ -292,11 +292,11 @@ resource "aws_security_group" "example_sg" {
 }
 
 resource "aws_instance" "example-1" {
-  ami             = "ami-0187337106779cdf8"
+  ami             = "ami-01873379cdf8"
   instance_type   = "t2.micro"
   key_name        = "shashank"
   count           = 1
-  subnet_id       = "subnet-0ff77d87097016ced"
+  subnet_id       = "subnet-0ff77d8016ced"
   security_groups = [aws_security_group.example_sg.id]
 
  user_data = <<-EOF
