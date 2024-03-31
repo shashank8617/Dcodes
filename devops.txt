@@ -2,8 +2,8 @@ TERAAFORM
 
 provider "aws" {
   region = "ap-south-1"  
-  access_key = "AKIA4T74ACGVL7RV56"
-  secret_key = "rJmMPEAVmDStJXtScDjGKrQFX/njCR1Z/e4zP"
+  access_key = "AKV56"
+  secret_key = "rJmMCR1Z/e4zP"
 }
 
 resource "aws_instance" "example-1" {
@@ -117,7 +117,7 @@ sudo systemctl daemon-reload
 
 
 
-  secret_key = "eGn4QluGGht6Hglu58W870jO7YYuuODvgXoh8V"
+  secret_key = "eGnDvgXoh8V"
 }
 
 resource "aws_vpc" "example" {
@@ -159,8 +159,8 @@ resource "aws_security_group" "sg" {
 
 provider "aws" {
   region     = "ap-south-1"
-  access_key = "AKIARPH305JEL4"
-  secret_key = "eGn4QluGGh0jO7YYuuODvgXoh8V"
+  access_key = "AKIJEL4"
+  secret_key = "eGXoh8V"
 }
 
 resource "aws_vpc" "example" {
@@ -173,7 +173,7 @@ resource "aws_subnet" "example_public" {
 }
 
 resource "aws_security_group" "example_sg" {
-  vpc_id = "vpc-0c0df968e4dd60532"
+  vpc_id = "vpc-0c60532"
   
   ingress {
     from_port   = 80
@@ -184,7 +184,7 @@ resource "aws_security_group" "example_sg" {
 }
 
 resource "aws_instance" "example-1" {
-  ami             = "ami-0187337109cdf8"
+  ami             = "ami-01f8"
   instance_type   = "t2.micro"
   key_name        = "shashank"
   count           = 1
@@ -267,8 +267,8 @@ pipeline {
 
 provider "aws" {
   region     = "ap-south-1"
-  access_key = "AKIARKORSUG"
-  secret_key = "CQ3scx+c6YrONAqP5pVTkB9Slgny"
+  access_key = "AKISUG"
+  secret_key = "CQ3sB9Slgny"
 }
 
 resource "aws_vpc" "example" {
@@ -292,7 +292,7 @@ resource "aws_security_group" "example_sg" {
 }
 
 resource "aws_instance" "example-1" {
-  ami             = "ami-01873379cdf8"
+  ami             = "ami-018df8"
   instance_type   = "t2.micro"
   key_name        = "shashank"
   count           = 1
@@ -417,7 +417,7 @@ Worker node history
     2  sh kube.sh cat kube.sh 
     3  kubelet --version
     4  sudo kubeadm reset pre-flight checks
-    5  sudo kubeadm join 172.31.46.128:6443 --token c0lqy3.1tnql1919grjez5r         --discovery-token-ca-cert-hash sha256:ba0dfed9eae9d61b00e068d4e65cbd61af9126252bb56275950b7466e1ae0802 --v=5
+    5  sudo kubeadm join 172.31.46.128:6443 --token c0lqy3.1tnql1919grjez5r         --discovery-token-ca-cert-hash sha256:bab7466e1ae0802 --v=5
     6  docker --version
     7  kubelet --version
     8  history
