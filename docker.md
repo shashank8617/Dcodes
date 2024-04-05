@@ -1,5 +1,6 @@
 ## DOCKER
 # docker installtion
+### chechking
 
 sudo yum update -y
 sudo yum search docker
