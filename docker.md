@@ -11,8 +11,8 @@ sudo systemctl status docker.service
 docker --version
 ```
 
-DOCKER FILE 
-
+## DOCKER FILE 
+```
 FROM amazonlinux
 MAINTAINER shashank.karigowda@gmail.com
 RUN yum update -y
@@ -23,6 +23,7 @@ RUN yum install gzip -y
 RUN tar -zxvf apache-tomcat-9.0.86.tar.gz
 RUN yum install java-11* -y
 RUN sh apache-tomcat-9.0.86/bin/startup.sh
+```
 
 //cmd to run the file docker build -t shashank8617/webapp Dockerfile/
 
