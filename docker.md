@@ -26,7 +26,14 @@ RUN sh apache-tomcat-9.0.86/bin/startup.sh
 ```
 
 //cmd to run the file docker build -t shashank8617/webapp Dockerfile/
-
+### pull image
+```bash
+docker pull nginx
+```
+### run container
+```bash
+docker run -it -d --name webapp -p 8000:80 ngnix
+```
 DOCKER COMPOSE 
 
 https://codeshare.io/alpha103
