@@ -37,7 +37,7 @@ docker run -it -d --name webapp -p 8000:80 ngnix
 DOCKER COMPOSE 
 
 https://codeshare.io/alpha103
-
+```/bin/bash
 sudo yum update -y
 sudo yum search docker
 sudo yum info docker
@@ -50,3 +50,4 @@ sudo yum install git -y
 sudo curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
+```
