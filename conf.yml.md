@@ -1,3 +1,4 @@
+```bash
 apiVersion: v1
 kind: Pod
 metadata:
@@ -17,3 +18,4 @@ spec:
        items:
        - key: sample.cfg
          path: sample.cfg
+```
