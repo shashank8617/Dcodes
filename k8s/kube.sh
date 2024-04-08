@@ -1,3 +1,4 @@
+```bash
 # disable swap
 sudo swapoff -a
 
@@ -47,3 +48,4 @@ sudo apt-get install -y jq
 
 sudo systemctl enable --now kubelet
 sudo systemctl start kubelet
+```
