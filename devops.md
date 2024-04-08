@@ -1,5 +1,5 @@
-TERAAFORM
-
+# TERAAFORM
+```bash
 provider "aws" {
   region = "ap-south-1"  
   access_key = "AKIA4T7L7RY4V56"
@@ -21,13 +21,13 @@ resource "aws_security_groups" "example-1" {
     Name = "ExampleInstance" 
   }
 }
+```
 
 
 
 
-
-DOCKER
-
+# DOCKER
+```bash
 sudo yum update -y
 sudo yum search docker
 sudo yum info docker
@@ -36,9 +36,9 @@ sudo systemctl enable docker.service
 sudo systemctl start docker.service
 sudo systemctl status docker.service
 docker --version
-
-DOCKER FILE 
-
+```
+# DOCKER FILE 
+```bash
 FROM amazonlinux
 MAINTAINER shashank.karigowda@gmail.com
 RUN yum update -y
@@ -49,13 +49,11 @@ RUN yum install gzip -y
 RUN tar -zxvf apache-tomcat-9.0.86.tar.gz
 RUN yum install java-11* -y
 RUN sh apache-tomcat-9.0.86/bin/startup.sh
-
+```
 //cmd to run the file docker build -t shashank8617/webapp Dockerfile/
-
-DOCKER COMPOSE 
-
 https://codeshare.io/alpha103
-
+# DOCKER COMPOSE 
+```bash
 sudo yum update -y
 sudo yum search docker
 sudo yum info docker
@@ -68,12 +66,12 @@ sudo yum install git -y
 sudo curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
-
+```
 22
 sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
-
-
+# .yml (script)
+```bash
 version: '3'
 services:
   web:
@@ -86,7 +84,7 @@ services:
 
 YML
 
-.yml (script)
+
 
 version:'3'
 services:
@@ -96,9 +94,9 @@ services:
     -4000:80
   db:
     image:redis
-
-JENKINS
-
+```
+# JENKINS
+```bash
 sudo wget -O /etc/yum.repos.d/jenkins.repo \
     https://pkg.jenkins.io/redhat-stable/jenkins.repo
 sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
@@ -107,16 +105,9 @@ sudo yum upgrade
 sudo yum install fontconfig java-17-openjdk
 sudo yum install jenkins
 sudo systemctl daemon-reload
-
-
-
-
-
-
-
-
-
-
+```
+# connection to vpc
+```bash
   secret_key = "eGn4QluGGhtYYuuODvgXoh8V"
 }
 
@@ -151,67 +142,9 @@ resource "aws_security_group" "sg" {
   ingress {
     from_port   = 80
     to_port     = 80
--- INSERT --                                                                                                                                32,32          4%
-
-
-
-
-
-provider "aws" {
-  region     = "ap-south-1"
-  access_key = "AKIAJEL4"
-  secret_key = "eGn4Q07YYuuODvgXoh8V"
-}
-
-resource "aws_vpc" "example" {
-  cidr_block = "10.0.0.0/16"
-}
-
-resource "aws_subnet" "example_public" {
-  vpc_id     = "vpc-0c0df968e4dd60532"
-  cidr_block = "10.0.1.0/24"
-}
-
-resource "aws_security_group" "example_sg" {
-  vpc_id = "vpc-0c0df968e4dd60532"
-  
-  ingress {
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-}
-
-resource "aws_instance" "example-1" {
-  ami             = "ami-018779cdf8"
-  instance_type   = "t2.micro"
-  key_name        = "shashank"
-  count           = 1
-  subnet_id       = "subnet-0ff77016ced"
-  security_groups = ["aws_security_group"]
-
-  provisioner "remote-exec" {
-    inline = [
-      "sudo yum install -y httpd",
-      "sudo systemctl start httpd",
-      "sudo systemctl enable httpd"
-    ]
-  }
-
-  tags = {
-    Name = "ExampleInstance"
-  }
-}
-
-
-
-
-
-
-
-
-
+```
+# Jenkins Pipeline
+```bash
 
 pipeline {
     agent any
@@ -240,7 +173,7 @@ pipeline {
         }
     }
 }
-
+```
 
 
 
