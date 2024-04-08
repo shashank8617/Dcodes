@@ -81,10 +81,7 @@ services:
   db:
     image: redis
 
-
 YML
-
-
 
 version:'3'
 services:
@@ -175,29 +172,8 @@ pipeline {
 }
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# .
+```bash
 provider "aws" {
   region     = "ap-south-1"
   access_key = "AKIARPORSUG"
@@ -244,33 +220,19 @@ resource "aws_instance" "example-1" {
     Name = "ExampleInstance"
   }
 }
-           
-
-                                                                                                                                            1,1           Top
-
-
-If docker is present don't install docker or else install docker 
-Docker install
-
-
-
-
-
-
-
-
-
-
-Jenkins deployment code for USER.XML file
-
+```
+# Jenkins deployment code for USER.XML file
+```bash
 <role rolename="manager-gui"/>
 <role rolename="manager-script"/>
 <role rolename="manager-jmx"/>
 <role rolename="manager-status"/>
 <user username="admin" password="admin" roles="manager-gui, manager-script, manager-jmx, manager-status"/>
 
+```
 
-//////////////////////////////KUBERNETES CLUSTER SCRIPT////////////////////
+# KUBERNETES CLUSTER SCRIPT
+```bash
 
 # disable swap
 sudo swapoff -a
@@ -321,30 +283,24 @@ sudo apt-get install -y jq
 
 sudo systemctl enable --now kubelet
 sudo systemctl start kubelet
+```
 
-/////////////////////////KUBERNETES CLUSTER SCRIPT///////////////////////////
 
 
------///////////////master//////////////////////////////////////////////-------------------------
+# kubernetes master node
+```bash
 
 mkdir -p $HOME/.kube
-
-
-
+sudo cp -i /etc/kubernetes/admin.conf $HOME/ .kube/config
+sudo chown $(id -u):$(id -g) $HOME/ .kube/config
 only in the master node:
 when you complete all above procedure:
 
 kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.26.0/manifests/calico.yaml
+```
 
------///////////////master//////////////////////////////////////////////-------------------------
-
-
-
-
-
-
-
-Worker node history
+# Worker node history K8s
+```bash
 
     1  vi kube.sh
     2  sh kube.sh cat kube.sh 
@@ -354,8 +310,9 @@ Worker node history
     6  docker --version
     7  kubelet --version
     8  history
-
-Master node history
+```
+# Master node history K8s
+```bash
 
     1  vi kube.sh
     2  sh kube.sh cat kube.sh 
@@ -397,11 +354,9 @@ Master node history
    38  kubectl delete -f pod.yml 
    39  history
 
+```
 
-
-	mkdir -p $HOME/.kube
-	sudo cp -i /etc/kubernetes/admin.conf $HOME/ .kube/config
-	sudo chown $(id -u):$(id -g) $HOME/ .kube/config
+	
 
 	
 
@@ -432,20 +387,10 @@ spec:
       command: ["/bin/bash", "-c", "while true; do echo Hi everyone; sleep 5; done"]
   restartPolicy: Never      #Default to Always
 
+# TASKS MANIFESTS
 
-
-
-apiVersion: v1
-Kind: Pod
-metadata:  gtegtsjuy		y	t	u	g	y	gt	gt	gt	gt	gt	gt	gt	gt	gt	gt	gt	gt	gt	gt	gt	gt	gt	gt	
-
-
-
-
-
-------*************SCRIPTS**************-------------
-TASKS MANIFESTS
-----//for 1 pod with 1 container with the image of ubuntu//---
+##----//for 1 pod with 1 container with the image of ubuntu//---
+```bash
 
 kind: pod
 apiVersion: v1
@@ -456,8 +401,11 @@ spec:
     - name: jspiders
       image: ubuntu
       command: ["/bin/bash", "-c", "while true; do echo hi everyone; sleep 5; done"]
+```
 
-----//create one pod with 2 containers//-----
+### ----//create one pod with 2 containers//-----
+```bash
+
 apiVersion: v1
 kind: Pod
 metadata:
@@ -471,8 +419,10 @@ spec:
       image: ubuntu
       command: ["/bin/bash", "-c", "while true; do echo hi everyone; sleep 5; done"]
   restartPolicy: Never     #Defaults to always
+```
+### ----//create 1 pod with image nginx and assign port no 80//-----
+```bash
 
-----//create 1 pod with image nginx and assign port no 80//-----
 apiVersion: v1
 kind: Pod
 metadata:
@@ -483,8 +433,9 @@ spec:
       image: nginx
       ports:
         - containerPort: 80
-
-----//create a task with labels(used to find the individual containers by label name)//----
+```
+### ----//create a task with labels(used to find the individual containers by label name)//----
+```bash
 
 apiVersion: v1
 kind: Pod
@@ -498,8 +449,9 @@ spec:
     - name: demo
       image: ubuntu
       command: ["/bin/bash", "-c", "while true; do echo hi everyone; sleep 5; done"]
-
-------//REPLICATION CONTAINER//-----
+```
+### ------//REPLICATION CONTAINER//-----
+```bash
 
 
 apiversion: v1
@@ -521,9 +473,10 @@ spec:
           image: nginx
           ports:
           - containersPort: 80
+```
+### ------//REPLICA SET\\-------
 
-------//REPLICA SET\\-------
-
+```bash
 
 apiVersion: v1
 kind: ReplicaSet
@@ -546,20 +499,15 @@ spec:
           image: ubuntu
           command: ["/bin/bash", "-c", "while true; do echo hello world; sleep 3; done"]
 
+```
 
 
+### ------*************SCRIPTS**************-------------
 
-------*************SCRIPTS**************-------------
-
-
-
-
-
+```bash
 confg
 Webapp
 Inf
-
 **/*/.war
-
-
 https://codeshare.io/alpha103
+```
