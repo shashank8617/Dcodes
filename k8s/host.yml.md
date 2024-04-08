@@ -1,3 +1,4 @@
+```bash
 apiVersion: v1
 kind: Pod
 metadata:
@@ -14,3 +15,4 @@ spec:
   - name: sandisk
     hostPath:
       path: /tmp/data
+```
