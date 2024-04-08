@@ -1,3 +1,4 @@
+```bash
 apiVersion: v1
 kind: Pod
 metadata:
@@ -19,3 +20,4 @@ spec:
   volumes:
   - name: sandisk
     emptyDir: {}
+```
